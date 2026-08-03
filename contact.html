@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F2F5F4" />
+    <title>Contact — SmartMGTS</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t =
+            localStorage.getItem("smartmgts-theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__bar">
+        <a href="index.html" class="brand">
+          <img
+            src="/assets/images/logo_withoutText.png.png"
+            alt="SmartMGTS logo"
+            class="logo_img"
+          />
+        </a>
+
+        <nav class="nav" id="primary-nav">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" aria-current="page" data-i18n="nav.home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="products.html" data-i18n="nav.products">Products</a>
+            </li>
+            <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+          <div class="nav__controls">
+            <div class="lang-switch" role="group" aria-label="Language / ভাষা">
+              <button type="button" data-lang="en" aria-pressed="true">
+                EN
+              </button>
+              <button type="button" data-lang="bn" aria-pressed="false">
+                বাং
+              </button>
+            </div>
+            <button
+              class="icon-btn"
+              type="button"
+              data-theme-toggle
+              aria-pressed="false"
+              data-i18n-aria="nav.themeAria"
+              aria-label="Toggle light and dark mode"
+            >
+              <svg
+                class="icon-sun"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path
+                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                />
+              </svg>
+              <svg
+                class="icon-moon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+              </svg>
+            </button>
+            <a
+              class="btn btn--primary btn--sm"
+              href="contact.html"
+              data-i18n="nav.cta"
+              >Talk to us</a
+            >
+          </div>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-i18n-aria="nav.menuAria"
+          aria-label="Toggle menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section section--tight">
+        <div class="container" style="max-width: 760px">
+          <p class="eyebrow reveal" data-i18n="contact.eyebrow">Get in touch</p>
+          <h1 class="reveal" data-i18n="contact.title">
+            Let's talk about your sales &amp; distribution setup
+          </h1>
+          <p
+            class="reveal"
+            style="font-size: var(--step-1)"
+            data-i18n="contact.subtitle"
+          >
+            Send us a message.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container grid grid--2" style="align-items: start">
+          <form class="card reveal">
+            <h3 data-i18n="contact.formTitle">Send a message</h3>
+
+            <div class="form-field">
+              <label for="name" data-i18n="contact.nameLabel">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                data-i18n-placeholder="contact.namePlaceholder"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div class="grid grid--2">
+              <div class="form-field">
+                <label for="email" data-i18n="contact.emailLabel">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  data-i18n-placeholder="contact.emailPlaceholder"
+                  placeholder="you@company.com"
+                />
+              </div>
+              <div class="form-field">
+                <label for="phone" data-i18n="contact.phoneLabel">Phone</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  data-i18n-placeholder="contact.phonePlaceholder"
+                  placeholder="01XXXXXXXXX"
+                />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="interest" data-i18n="contact.interestLabel"
+                >I'm interested in</label
+              >
+              <select id="interest" name="interest">
+                <option data-i18n="contact.interestOptions.dist">
+                  Sales &amp; Distribution platform
+                </option>
+                <option data-i18n="contact.interestOptions.iso">
+                  ISO Management
+                </option>
+                <option data-i18n="contact.interestOptions.custom">
+                  A custom web app
+                </option>
+                <option data-i18n="contact.interestOptions.other">
+                  Something else
+                </option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message" data-i18n="contact.messageLabel"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                data-i18n-placeholder="contact.messagePlaceholder"
+                placeholder="Tell us a little about your business and what you need."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn--primary"
+              data-i18n="contact.submit"
+            >
+              Send message
+            </button>
+            <p
+              class="form-note"
+              data-form-status
+              hidden
+              style="margin-top: var(--sp-3)"
+              data-i18n="contact.formStatus"
+            >
+              This is a demo form.
+            </p>
+          </form>
+
+          <div class="reveal">
+            <div class="card" style="margin-bottom: var(--sp-4)">
+              <h4 data-i18n="contact.findUs">Find us here</h4>
+              <p data-i18n="footer.address">
+                House 12, Road 13, Sector 4, Uttara, Dhaka
+              </p>
+              <h4 data-i18n="contact.getInTouch">Get in touch</h4>
+              <p>
+                <a href="tel:+8801701019437">01701-019437</a><br /><a
+                  href="mailto:contact@smartmgts.com"
+                  >contact@smartmgts.com</a
+                >
+              </p>
+              <h4 data-i18n="contact.officeTime">Office time</h4>
+              <p data-i18n="footer.officeHours">
+                Sun &ndash; Thu: 9am &ndash; 5pm
+              </p>
+              <a
+                class="btn btn--accent btn--sm"
+                href="https://wa.me/8801701019437"
+                target="_blank"
+                rel="noopener"
+                data-i18n="contact.whatsapp"
+                >Chat on WhatsApp</a
+              >
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden">
+              <iframe
+                title="SmartMGTS office location"
+                width="100%"
+                height="260"
+                style="border: 0; display: block"
+                loading="lazy"
+                src="https://maps.google.com/maps?q=23%C2%B052%2700.7%22N%2090%C2%B024%2719.3%22E&t=m&z=14&output=embed"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="form-note" id="status" hidden></p>
+
+    <footer class="site-footer" id="footer-include"></footer>
+
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/footer.js"></script>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const status = document.getElementById("status");
+
+      if (params.get("success")) {
+        status.hidden = false;
+        status.style.color = "green";
+        status.textContent = "Thank you! Your message has been sent.";
+      }
+
+      if (params.get("error")) {
+        status.hidden = false;
+        status.style.color = "red";
+        status.textContent = "Sorry, something went wrong.";
+      }
+    </script>
+  </body>
+</html>

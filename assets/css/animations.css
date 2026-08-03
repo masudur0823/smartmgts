@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Animations — the route line is the site's signature motif
+   ========================================================================== */
+
+.route-svg path.route-line {
+  fill: none;
+  stroke: var(--color-route);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+  stroke-linecap: round;
+  animation: route-flow 18s linear infinite;
+}
+.route-svg .route-node circle { fill: var(--color-surface); stroke: var(--color-brand); stroke-width: 2; }
+.route-svg .route-node.is-hq circle { fill: var(--color-accent); stroke: var(--color-accent-ink); }
+.route-svg .route-node text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--color-ink-soft);
+}
+
+@keyframes route-flow {
+  to { stroke-dashoffset: -400; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-svg path.route-line { animation: none; }
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Theme toggle micro-interaction ---- */
+.icon-btn svg { transition: transform var(--dur) var(--ease); }
+.icon-btn:active svg { transform: scale(0.85) rotate(-10deg); }
+
+/* ---- Mobile nav ---- */
+@keyframes nav-drop {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

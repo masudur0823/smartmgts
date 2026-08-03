@@ -1,0 +1,97 @@
+/* ==========================================================================
+   SmartMGTS — Design Tokens
+   Theme: "Ledger & Route" — deep navy ink, mango signal, route-line teal.
+   Grounded in the product's own world: geo routes, ledgers, SKU dashboards.
+   ========================================================================== */
+
+:root {
+  /* ---- Type ---- */
+  --font-display: 'Space Grotesk', 'Hind Siliguri', sans-serif;
+  --font-body: 'Inter', 'Hind Siliguri', sans-serif;
+  --font-bn: 'Hind Siliguri', 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Hind Siliguri', monospace;
+
+  --step--1: clamp(0.78rem, 0.75rem + 0.2vw, 0.86rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.25vw, 1.08rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 1.9rem);
+  --step-3:  clamp(1.9rem, 1.5rem + 2vw, 2.6rem);
+  --step-4:  clamp(2.4rem, 1.8rem + 3vw, 3.6rem);
+  --step-5:  clamp(3rem, 2.1rem + 4.5vw, 5rem);
+
+  /* ---- Spacing (8px rhythm) ---- */
+  --sp-1: 0.5rem;
+  --sp-2: 0.75rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2rem;
+  --sp-6: 3rem;
+  --sp-7: 4.5rem;
+  --sp-8: 7rem;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --container: 1180px;
+
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --dur-fast: 160ms;
+  --dur: 320ms;
+
+  color-scheme: light;
+
+  /* ---- Light theme ---- */
+  --color-bg: #F2F5F4;
+  --color-bg-alt: #E8EEEC;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FFFFFF;
+  --color-ink: #142033;
+  --color-ink-soft: #4C5C72;
+  --color-ink-faint: #7C8AA0;
+  --color-border: #DCE3E0;
+  --color-border-strong: #C3CDC9;
+
+  --color-brand: #1B3B6F;
+  --color-brand-ink: #0E2549;
+  --color-accent: #D98C1F;
+  --color-accent-ink: #8A570E;
+  --color-route: #24806B;
+  --color-route-soft: #DCEFE9;
+  --color-danger: #B14435;
+  --color-danger-soft: #F6E2DE;
+
+  --shadow-s: 0 1px 2px rgba(20, 32, 51, 0.06);
+  --shadow-m: 0 8px 24px rgba(20, 32, 51, 0.08);
+  --shadow-l: 0 20px 48px rgba(20, 32, 51, 0.14);
+
+  --grain-opacity: 0.035;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0C1420;
+  --color-bg-alt: #0F1A2A;
+  --color-surface: #15223A;
+  --color-surface-raised: #182742;
+  --color-ink: #E8EEF6;
+  --color-ink-soft: #A9B8CE;
+  --color-ink-faint: #7284A0;
+  --color-border: #26344E;
+  --color-border-strong: #34456524;
+
+  --color-brand: #7FA6E8;
+  --color-brand-ink: #C6D8F4;
+  --color-accent: #F0AE4E;
+  --color-accent-ink: #FBD498;
+  --color-route: #4FD1AE;
+  --color-route-soft: #12332B;
+  --color-danger: #E6796A;
+  --color-danger-soft: #3A2020;
+
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-m: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-l: 0 24px 56px rgba(0, 0, 0, 0.5);
+
+  --grain-opacity: 0.05;
+}

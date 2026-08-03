@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "title": "SmartMGTS — Sales & Distribution, Digitized",
+    "description": "SmartMGTS builds SaaS platforms and web apps that digitize sales, distribution and ISO management for FMCG and distribution companies in Bangladesh."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Talk to us",
+    "menuAria": "Toggle menu",
+    "themeAria": "Toggle light and dark mode"
+  },
+  "hero": {
+    "eyebrow": "Region  &rarr; HQ &rarr; Point &rarr; Route",
+    "title": "A smart way to manage sales &amp; distribution",
+    "subtitle": "We build the SaaS platforms and web apps to take control of your sales and distribution framework with our comprehensive sales and distribution management platform",
+    "ctaPrimary": "Explore our products",
+    "ctaSecondary": "Talk to the team"
+  },
+
+  "productsSection": {
+    "eyebrow": "What we've built",
+    "title": "Our Products",
+    "subtitle": "Every product below solves a real problem for a real client",
+    "viewAll": "See all products"
+  },
+  "products": {
+    "iso": {
+      "tag": "SaaS &middot; ISO Management",
+      "name": "ISO Management System",
+      "desc": "Helps a company plan, document and track its International Organization for Standardization (ISO) compliance work in one place, instead of scattered paper files and spreadsheets.",
+      "status": "live",
+      "clients": "1 client &middot; Peerless Company",
+      "link": "peerless-iso.smartmgts.com"
+    },
+    "dist": {
+      "tag": "SaaS &middot; Sales &amp; Distribution",
+      "name": "Sales &amp; Distribution Management",
+      "desc": "Our core platform: dashboards, geo-based route planning, employee &amp; device control, target setting, and customer collections for distribution businesses. Runs as a separate, dedicated instance for each client company.",
+      "status": "live",
+      "clients": "3 clients &middot; Peerless, FDH, MNCorp",
+      "link": "peerless.smartmgts.com"
+    },
+    "taj": {
+      "tag": "Website &middot; Food Ordering",
+      "name": "Tajmahal Takeaway",
+      "desc": "A custom restaurant website built for Tajmahal Takeaway, where customers can browse the menu and place orders online.",
+      "status": "live",
+      "clients": "Restaurant client",
+      "link": "tajmahaltakeaway.smartmgts.com"
+    },
+    "dokaner": {
+      "tag": "App &middot; Retail",
+      "name": "Dokaner Ponno",
+      "desc": "An app built for retailers to manage their shop &mdash; currently under active development.",
+      "status": "dev",
+      "clients": "Retail &middot; in development",
+      "link": "dokanerponno.smartmgts.com"
+    },
+    "fmcgpro": {
+      "tag": "Platform &middot; FMCG",
+      "name": "FMCG Pro BD",
+      "desc": "A platform for the sales &amp; distribution side of the FMCG (fast-moving consumer goods) sector in Bangladesh.",
+      "status": "live",
+      "clients": "FMCG sector platform",
+      "link": "fmcgprobd.smartmgts.com"
+    },
+    "fmcgprofessionals": {
+      "tag": "Website &middot; Community",
+      "name": "FMCG Professionals",
+      "desc": "A membership site for FMCG professionals to join and be counted as part of the FMCG Pro BD community.",
+      "status": "live",
+      "clients": "Member registration for FMCG Pro BD",
+      "link": "fmcgprofessionals.org"
+    }
+  },
+  "badges": { "live": "Live", "dev": "In development" },
+  "cardLabels": { "visit": "Visit site" },
+  "featuresSection": {
+    "eyebrow": "Inside the platform",
+    "title": "Key software features",
+    "subtitle": "The modules our Sales &amp; Distribution platform is built around &mdash; the same modules that run inside Peerless, FDH and MNCorp today."
+  },
+  "features": {
+    "dashboard": {
+      "title": "Dashboard &amp; Analytics",
+      "desc": "Real-time business insight: SKU analysis, collection analysis, lifting vs. collection reports, and customer ledgers."
+    },
+    "geo": {
+      "title": "Geo Setup",
+      "desc": "Admins configure Regions, HQ, Points and Routes, so territory and route-based sales tracking stays accurate."
+    },
+    "auth": {
+      "title": "Authorization &amp; Device Control",
+      "desc": "Login-device monitoring and device-based access control for accountability and security."
+    },
+    "employees": {
+      "title": "Employees Management",
+      "desc": "Employee profiles, role-based access control, and activity tracking in one place."
+    },
+    "targets": {
+      "title": "Target Management",
+      "desc": "Monthly and weekly targets for SR, DSR and DD, tracked against real performance."
+    },
+    "collection": {
+      "title": "Collection Module",
+      "desc": "Customer-wise collections, outstanding balances, and full collection history."
+    }
+  },
+  "benefitsSection": {
+    "eyebrow": "Why teams switch to us",
+    "title": "Built to remove paperwork and win back time"
+  },
+  "benefits": {
+    "paperless": {
+      "title": "Paperless work",
+      "desc": "Field data, approvals and reports move online instead of through paper registers &mdash; easier to search, harder to lose."
+    },
+    "timesaver": {
+      "title": "Time saver",
+      "desc": "Automated collections, targets and reporting free up hours that used to go into manual data entry."
+    },
+    "secure": {
+      "title": "Secure by design",
+      "desc": "Application backends run on AWS; the frontend is served through cPanel, keeping deployment and data handling separated and controlled."
+    }
+  },
+  "faqSection": {
+    "eyebrow": "Questions",
+    "title": "Frequently asked questions"
+  },
+  "faq": {
+    "q1": {
+      "q": "Is your software suitable for my type of business?",
+      "a": "Our Sales &amp; Distribution platform is built for small and medium-sized distribution and sales enterprises that want to digitize field operations, and our ISO Management app is built for companies managing formal ISO compliance."
+    },
+    "q2": {
+      "q": "Can I get a customized solution for my business?",
+      "a": "Yes. Each client runs their own dedicated instance of the platform, and our team can adapt modules to fit specific logistics or reporting requirements."
+    },
+    "q3": {
+      "q": "Where is my data hosted, and is it secure?",
+      "a": "Application backends are hosted on AWS, with the frontend served separately through cPanel &mdash; a setup chosen to keep infrastructure secure and manageable."
+    }
+  },
+  "teamSection": {
+    "eyebrow": "Who builds this",
+    "title": "A small team, hands-on with every client",
+    "subtitle": "Three people cover consulting, development and support across all six products.",
+    "viewAll": "Meet the full team"
+  },
+  "team": {
+    "hemel": { "role": "Software Consultant" },
+    "shayak": { "role": "Software Developer" },
+    "masudur": { "role": "Software Developer" }
+  },
+  "ctaBand": {
+    "title": "Ready to digitize your sales &amp; distribution?",
+    "subtitle": "Tell us about your business and we'll walk you through the right product.",
+    "cta": "Contact SmartMGTS"
+  },
+  "footer": {
+    "blurb": "SaaS platforms and web apps for sales &amp; distribution, built in Bangladesh.",
+    "productsTitle": "Products",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "findUs": "Find us here",
+    "address": "House 12, Road 13, Sector 4, Uttara, Dhaka",
+    "getInTouch": "Get in touch",
+    "officeTime": "Office time",
+    "officeHours": "Sun &ndash; Thu: 9am &ndash; 5pm",
+    "rights": "All rights reserved."
+  },
+  "about": {
+    "eyebrow": "About SmartMGTS",
+    "title": "Software for the people who move goods every day",
+    "subtitle": "SmartMGTS builds the systems that FMCG and distribution companies in Bangladesh use to run sales, collections and compliance &mdash; replacing paper registers with dashboards their teams actually use.",
+    "storyTitle": "What we do",
+    "storyBody": "We design and build SaaS platforms and websites for the sales &amp; distribution sector: a dedicated Sales &amp; Distribution Management system for distribution companies, an ISO Management system for formal compliance work, and standalone web apps &mdash; from a restaurant ordering site to an FMCG community platform &mdash; for clients with more specific needs.",
+    "approachTitle": "How we work",
+    "approachBody": "Every client gets their own dedicated application instance rather than a one-size-fits-all account, so modules like Geo Setup, Target Management and Collections can be adapted to how that business actually runs its routes and territories. Backends are hosted on AWS; frontends are served through cPanel.",
+    "teamTitle": "The team",
+    "teamSubtitle": "Three people, covering consulting, development and delivery for every product on this site."
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Let's talk about your sales &amp; distribution setup",
+    "subtitle": "Whether you're comparing our Sales &amp; Distribution platform, asking about ISO Management, or have a custom project in mind &mdash; send us a message.",
+    "formTitle": "Send a message",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@company.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "01XXXXXXXXX",
+    "interestLabel": "I'm interested in",
+    "interestOptions": {
+      "dist": "Sales &amp; Distribution platform",
+      "iso": "ISO Management",
+      "custom": "A custom web app",
+      "other": "Something else"
+    },
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us a little about your business and what you need.",
+    "submit": "Send message",
+    "formStatus": "Thanks &mdash; this is a demo form. Please reach us directly via WhatsApp, phone or email below until the backend is connected.",
+    "detailsTitle": "Office details",
+    "findUs": "Find us here",
+    "getInTouch": "Get in touch",
+    "officeTime": "Office time",
+    "whatsapp": "Chat on WhatsApp"
+  }
+}
