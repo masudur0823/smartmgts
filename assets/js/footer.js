@@ -4,9 +4,9 @@
  * Runs synchronously (script tag at the end of <body>) so its data-i18n
  * elements are already in the DOM when i18n.js applies translations.
  */
-(function () {
-  const target = document.getElementById("footer-include");
-  if (!target) return;
+;(function () {
+  const target = document.getElementById('footer-include')
+  if (!target) return
 
   target.innerHTML = `
     <div class="container">
@@ -14,14 +14,9 @@
 
         <div>
           <a href="index.html" class="brand" style="color:#fff; margin-bottom: var(--sp-3); display:inline-flex;">
-            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
-              <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-opacity="0.25"/>
-              <path d="M7 21 L15 9 L25 23" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
-              <circle cx="7" cy="21" r="2.4"/><circle cx="25" cy="23" r="2.4"/><circle cx="15" cy="9" r="3"/>
-            </svg>
-            SmartMGTS
+            <img src="/assets/images/logo.png" alt="SmartMGTS" />
           </a>
-          <p data-i18n="footer.blurb">SaaS platforms and web apps for sales &amp; distribution, built in Bangladesh.</p>
+          <p data-i18n="footer.blurb">SaaS platforms and web apps for sales &amp; distribution</p>
           <div class="social-row">
             <a href="https://wa.me/8801701019437" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6L4 20Z"/></svg></a>
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V4Z"/></svg></a>
@@ -54,5 +49,5 @@
         
       </div>
     </div>
-  `;
-})();
+  `
+})()

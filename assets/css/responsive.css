@@ -26,4 +26,5 @@
   .stat-strip { gap: var(--sp-4); }
   h1 { font-size: var(--step-4); }
   .section { padding-block: var(--sp-6); }
+  .card{padding: var(--sp-3);}
 }
