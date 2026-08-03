@@ -1,66 +1,67 @@
 /**
  * main.js — shared site behavior (mobile nav, scroll reveal, small utilities)
  */
-(function () {
+;(function () {
   document.addEventListener('DOMContentLoaded', () => {
     /* Mobile nav toggle */
-    const navToggle = document.querySelector('[data-nav-toggle]');
-    const nav = document.getElementById('primary-nav');
+    const navToggle = document.querySelector('[data-nav-toggle]')
+    const nav = document.getElementById('primary-nav')
     if (navToggle && nav) {
       navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('is-open');
-        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      nav.querySelectorAll('a').forEach((link) => {
+        const isOpen = nav.classList.toggle('is-open')
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+      })
+      nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          nav.classList.remove('is-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
+          nav.classList.remove('is-open')
+          navToggle.setAttribute('aria-expanded', 'false')
+        })
+      })
     }
 
     /* Mark current page in nav */
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav__list a[href]').forEach((link) => {
-      const href = link.getAttribute('href');
+    const path = window.location.pathname.split('/').pop() || 'index.html'
+    document.querySelectorAll('.nav__list a[href]').forEach(link => {
+      link.removeAttribute('aria-current') // clear any hardcoded/stale value first
+      const href = link.getAttribute('href')
       if (href === path || (path === '' && href === 'index.html')) {
-        link.setAttribute('aria-current', 'page');
+        link.setAttribute('aria-current', 'page')
       }
-    });
+    })
 
     /* Scroll reveal */
-    const revealEls = document.querySelectorAll('.reveal');
+    const revealEls = document.querySelectorAll('.reveal')
     if ('IntersectionObserver' in window && revealEls.length) {
       const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+        entries => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              io.unobserve(entry.target);
+              entry.target.classList.add('is-visible')
+              io.unobserve(entry.target)
             }
-          });
+          })
         },
         { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-      );
-      revealEls.forEach((el) => io.observe(el));
+      )
+      revealEls.forEach(el => io.observe(el))
     } else {
-      revealEls.forEach((el) => el.classList.add('is-visible'));
+      revealEls.forEach(el => el.classList.add('is-visible'))
     }
 
     /* Footer year */
-    document.querySelectorAll('[data-current-year]').forEach((el) => {
-      el.textContent = new Date().getFullYear();
-    });
+    document.querySelectorAll('[data-current-year]').forEach(el => {
+      el.textContent = new Date().getFullYear()
+    })
 
     /* Contact form: demo-only submit (no backend wired up yet) */
-    const contactForm = document.querySelector('[data-contact-form]');
+    const contactForm = document.querySelector('[data-contact-form]')
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const status = contactForm.querySelector('[data-form-status]');
-        if (status) status.hidden = false;
-        contactForm.reset();
-      });
+      contactForm.addEventListener('submit', e => {
+        e.preventDefault()
+        const status = contactForm.querySelector('[data-form-status]')
+        if (status) status.hidden = false
+        contactForm.reset()
+      })
     }
-  });
-})();
+  })
+})()
