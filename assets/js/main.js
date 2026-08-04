@@ -65,3 +65,52 @@
     }
   })
 })()
+
+
+// lightbox functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.getElementById("lightbox-close");
+
+  if (!lightbox || !lightboxImg || !closeBtn) {
+    console.warn("Lightbox: required elements not found in the DOM.");
+    return;
+  }
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    lightboxImg.src = "";
+  }
+
+  // Event delegation: works for images that don't exist yet at page load,
+  // like the product cards rendered later by products-data.js
+  document.body.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".js-lightbox-trigger");
+    if (trigger) {
+      openLightbox(trigger.src, trigger.alt);
+    }
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+      closeLightbox();
+    }
+  });
+});

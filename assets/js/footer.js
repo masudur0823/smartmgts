@@ -28,8 +28,8 @@
         <div>
           <h4 data-i18n="footer.companyTitle">Company</h4>
           <ul class="footer-links">
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
-            <li><a href="about.html#team" data-i18n="teamSection.title">The team</a></li>
+            <li><a href="#" data-i18n="nav.about">About</a></li>
+            <li><a href="#" data-i18n="teamSection.title">The team</a></li>
             <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>

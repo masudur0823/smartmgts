@@ -202,10 +202,19 @@
                 margin-block: var(--sp-4);
               "
             >
-              <a
+              <!-- <a
                 class="btn btn--primary"
                 href="products.html"
                 data-i18n="hero.ctaPrimary"
+                >Explore our products</a
+              >
+              <a
+                class="btn btn--ghost"
+                href="contact.html"
+                data-i18n="hero.ctaSecondary"
+                >Talk to the team</a
+              > -->
+              <a class="btn btn--primary" data-i18n="hero.ctaPrimary"
                 >Explore our products</a
               >
               <a
@@ -220,12 +229,14 @@
             <img
               src="/assets/images/hero_image.png"
               alt="hero image"
+              class="js-lightbox-trigger"
               style="
                 width: 100%;
                 height: auto;
                 border-radius: var(--sp-2);
                 box-shadow: var(--shadow-md);
                 border: 10px solid var(--color-brand);
+                cursor: zoom-in;
               "
             />
           </div>
@@ -508,6 +519,28 @@
           >
         </div>
       </section>
+
+      <!-- ============ LIGHTBOX ============ -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button
+          class="lightbox__close"
+          type="button"
+          id="lightbox-close"
+          aria-label="Close image preview"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+          </svg>
+        </button>
+        <img src="" alt="" class="lightbox__img" id="lightbox-img" />
+      </div>
     </main>
 
     <footer class="site-footer" id="footer-include"></footer>

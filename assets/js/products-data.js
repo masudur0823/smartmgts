@@ -15,6 +15,8 @@
   //   users: '<circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6.1M21.5 20a6 6 0 0 0-5-5.9"/>'
   // };
 
+  const DESC_LIMIT = 80;
+
   const PRODUCTS = [
     { id: 'iso', icon: 'shield', links: [{ label: 'peerless-iso.smartmgts.com', url: 'https://peerless-iso.smartmgts.com/' }] },
     { id: 'dist', icon: 'grid', links: [
@@ -28,31 +30,70 @@
     { id: 'fmcgprofessionals', icon: 'users', links: [{ label: 'fmcgprofessionals.org', url: 'https://fmcgprofessionals.org/' }] }
   ];
 
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   function card(product, dict) {
     const t = dict.products[product.id];
     const badge = dict.badges[t.status];
     const linksHtml = product.links
       .map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} &#8599;</a>`)
       .join('');
+
+    const fullDesc = t.desc || '';
+    const isLong = fullDesc.length > DESC_LIMIT;
+    const shortDesc = isLong ? fullDesc.slice(0, DESC_LIMIT).trim() + '…' : fullDesc;
+    const moreLabel = (dict.ui && dict.ui.more) || 'More';
+    const lessLabel = (dict.ui && dict.ui.less) || 'Less';
+
     return `
       <article class="card card--product reveal is-visible">
-      <div class="card_img_container"><img src="/assets/images/products/${product.id}.png" alt="${t.name}" /></div>
-        <div class="card--product__top">
-          <span class="badge badge--${t.status}">${badge}</span>
+        <div class="card_img_container">
+          <img class="js-lightbox-trigger" src="/assets/images/products/${product.id}.png" alt="${escapeHtml(t.name)}" />
+          <span class="badge badge--${t.status} badge--on-image">${badge}</span>
         </div>
         <span class="card--product__tag mono">${t.tag}</span>
-        <h3>${t.name}</h3>
-        <p>${t.desc}</p>
-        <p class="card--product__tag mono">${t.clients}</p>
+        <h4 class="card--product_title">${t.name}</h4>
+        <p class="card--product__desc"
+           data-full="${escapeHtml(fullDesc)}"
+           data-short="${escapeHtml(shortDesc)}"
+           data-expanded="false">${shortDesc}</p>
+        ${isLong ? `<button type="button" class="card--product__more" data-more-label="${escapeHtml(moreLabel)}" data-less-label="${escapeHtml(lessLabel)}">${moreLabel}</button>` : ''}
        
       </article>`;
   }
 //  <div class="card--product__links">${linksHtml}</div>
+//  <p class="card--product__tag mono">${t.clients}</p>
+
   function render(dict) {
     document.querySelectorAll('[data-product-grid]').forEach((grid) => {
       grid.innerHTML = PRODUCTS.map((p) => card(p, dict)).join('');
     });
   }
+
+  // Toggle description truncation (event delegation — survives re-render)
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.card--product__more');
+    if (!btn) return;
+    const desc = btn.previousElementSibling;
+    if (!desc || !desc.classList.contains('card--product__desc')) return;
+
+    const expanded = desc.getAttribute('data-expanded') === 'true';
+    if (expanded) {
+      desc.textContent = desc.getAttribute('data-short');
+      desc.setAttribute('data-expanded', 'false');
+      btn.textContent = btn.getAttribute('data-more-label');
+    } else {
+      desc.textContent = desc.getAttribute('data-full');
+      desc.setAttribute('data-expanded', 'true');
+      btn.textContent = btn.getAttribute('data-less-label');
+    }
+  });
 
   document.addEventListener('smartmgts:langchange', (e) => render(e.detail.dict));
 })();
