@@ -50,7 +50,6 @@
     const isLong = fullDesc.length > DESC_LIMIT;
     const shortDesc = isLong ? fullDesc.slice(0, DESC_LIMIT).trim() + '…' : fullDesc;
     const moreLabel = (dict.ui && dict.ui.more) || 'More';
-    const lessLabel = (dict.ui && dict.ui.less) || 'Less';
 
     return `
       <article class="card card--product reveal is-visible">
@@ -60,11 +59,8 @@
         </div>
         <span class="card--product__tag mono">${t.tag}</span>
         <h4 class="card--product_title">${t.name}</h4>
-        <p class="card--product__desc"
-           data-full="${escapeHtml(fullDesc)}"
-           data-short="${escapeHtml(shortDesc)}"
-           data-expanded="false">${shortDesc}</p>
-        ${isLong ? `<button type="button" class="card--product__more" data-more-label="${escapeHtml(moreLabel)}" data-less-label="${escapeHtml(lessLabel)}">${moreLabel}</button>` : ''}
+        <p class="card--product__desc" data-full="${escapeHtml(fullDesc)}">${shortDesc}</p>
+        ${isLong ? `<a class="card--product__more" href="/products/${product.id}.html">${moreLabel}&#8594;</a>` : ''}
        
       </article>`;
   }
@@ -76,25 +72,6 @@
       grid.innerHTML = PRODUCTS.map((p) => card(p, dict)).join('');
     });
   }
-
-  // Toggle description truncation (event delegation — survives re-render)
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.card--product__more');
-    if (!btn) return;
-    const desc = btn.previousElementSibling;
-    if (!desc || !desc.classList.contains('card--product__desc')) return;
-
-    const expanded = desc.getAttribute('data-expanded') === 'true';
-    if (expanded) {
-      desc.textContent = desc.getAttribute('data-short');
-      desc.setAttribute('data-expanded', 'false');
-      btn.textContent = btn.getAttribute('data-more-label');
-    } else {
-      desc.textContent = desc.getAttribute('data-full');
-      desc.setAttribute('data-expanded', 'true');
-      btn.textContent = btn.getAttribute('data-less-label');
-    }
-  });
 
   document.addEventListener('smartmgts:langchange', (e) => render(e.detail.dict));
 })();

@@ -28,8 +28,7 @@
         <div>
           <h4 data-i18n="footer.companyTitle">Company</h4>
           <ul class="footer-links">
-            <li><a href="#" data-i18n="nav.about">About</a></li>
-            <li><a href="#" data-i18n="teamSection.title">The team</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
             <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
@@ -38,7 +37,7 @@
           <h4 data-i18n="footer.contactTitle">Contact</h4>
           <ul class="footer-links">
             <li><span data-i18n="footer.findUs" style="color:#7284A0; display:block; font-size:0.78rem;">Find us here</span><span data-i18n="footer.address">House 12, Road 13, Sector 4, Uttara, Dhaka</span></li>
-            <li><a href="tel:+8801701019437">01701-019437</a></li>
+            <li><a href="tel:+8801701019437">+8801701019437</a></li>
             <li><a href="mailto:contact@smartmgts.com">contact@smartmgts.com</a></li>
           </ul>
         </div>
