@@ -264,7 +264,7 @@
       </section>
 
       <!-- ============ FEATURES ============ -->
-      <section class="section" id="features">
+      <!-- <section class="section" id="features">
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow" data-i18n="featuresSection.eyebrow">
@@ -322,7 +322,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- ============ BENEFITS ============ -->
       <section class="section section--alt">
@@ -415,6 +415,77 @@
         </div>
       </section>
 
+      <section class="section" id="testimonials">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow" data-i18n="testimonialsSection.eyebrow">
+              Trusted by
+            </p>
+            <h2 data-i18n="testimonialsSection.title">What our clients say</h2>
+            <p data-i18n="testimonialsSection.subtitle">
+              Feedback from the teams running SmartMGTS and our ISO platform
+              every day.
+            </p>
+          </div>
+
+          <div
+            class="testimonial-carousel reveal"
+            data-testimonial-carousel
+            aria-roledescription="carousel"
+            aria-label="Customer reviews"
+          >
+            <div class="testimonial-navs">
+              <button
+                class="testimonial-nav testimonial-nav--prev"
+                type="button"
+                data-testimonial-prev
+                aria-label="Previous review"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+
+              <button
+                class="testimonial-nav testimonial-nav--next"
+                type="button"
+                data-testimonial-next
+                aria-label="Next review"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="testimonial-viewport">
+              <ul class="testimonial-track" data-testimonial-track></ul>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-dots"
+            data-testimonial-dots
+            role="tablist"
+            aria-label="Select review"
+          ></div>
+        </div>
+      </section>
+
       <!-- ============ FAQ ============ -->
       <section class="section">
         <div class="container" style="max-width: 760px">
@@ -440,6 +511,8 @@
           </details>
         </div>
       </section>
+
+      <!-- ============ TESTIMONIALS ============ -->
 
       <!-- ============ TEAM PREVIEW ============ -->
       <!-- <section class="section section--alt">
@@ -540,6 +613,8 @@
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/testimonials-data.js"></script>
+    <script src="assets/js/testimonials.js"></script>
     <script src="assets/js/footer.js"></script>
   </body>
 </html>
