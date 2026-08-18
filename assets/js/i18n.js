@@ -66,7 +66,7 @@
 
   async function loadDictionary(lang) {
     if (cache[lang]) return cache[lang];
-    const res = await fetch(`assets/lang/${lang}.json`, { cache: "no-cache" });
+    const res = await fetch(`/assets/lang/${lang}.json`, { cache: "no-cache" });
     if (!res.ok) throw new Error(`Could not load language file: ${lang}`);
     const data = await res.json();
     cache[lang] = data;
