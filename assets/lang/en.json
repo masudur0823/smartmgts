@@ -212,5 +212,34 @@
     "getInTouch": "Get in touch",
     "officeTime": "Office time",
     "whatsapp": "Chat on WhatsApp"
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Simple, per-user pricing",
+    "subtitle": "Sales &amp; Distribution Management",
+    "billing": {
+      "monthly": "Monthly",
+      "half": "Half-yearly",
+      "halfNote": "Save 5%",
+      "yearly": "Yearly",
+      "yearlyNote": "Save 10%",
+      "billedMonthly": "Billed monthly",
+      "billedHalf": "Billed every 6 months",
+      "billedYearly": "Billed annually"
+    },
+    "tiers": {
+      "starter": { "name": "Starter" },
+      "standard": { "name": "Standard" },
+      "enterprise": { "name": "Enterprise" }
+    },
+    "calc": {
+      "title": "Estimate your monthly cost",
+      "label": "Number of users",
+      "tierLabel": "Tier",
+      "priceLabel": "Price per user",
+      "totalLabel": "Estimated total",
+      "perMonthNote": "per month, before the one-time setup fee",
+      "enterpriseNote": "51+ users is priced individually."
+    }
   }
 }
