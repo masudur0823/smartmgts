@@ -1,0 +1,151 @@
+#good to know:
+check your ubuntu version:
+lsb_release -a 
+or
+cat /etc/lsb-release
+
+Step 1: update os
+
+#update linux os:  
+sudo apt update
+sudo apt upgrade
+
+check if need restart or reboot: cat /var/run/reboot-required
+
+
+-------------------------------------------------------------------
+#secure your vps
+VPS Security Settings: SSH, Firewall & Passwordless Login Setup Before Hosting
+documentation link: https://www.thapatechnical.com/2025/01/vps-security-settings-ssh-firewall.html
+
+#Creating Non-Root User
+    adduser masud
+    usermod -aG sudo masud
+#Let's exit our SSH connection, and try logging in as new user
+    ssh masud@187.77.131.173
+#Setting up SSH Keys for connecting to VPS
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+#On Windows, Turn on SSH Agent Service //run on PowerShell as administraton
+    Get-Service -Name ssh-agent | Set-Service -StartupType Automatic
+    Start-Service ssh-agent
+#Adding newly created SSH key in ssh-agent
+    ssh-add .\\.ssh\\id_ed25519
+#Disable Password Login
+    sudo nano /etc/ssh/sshd_config
+    sudo systemctl restart ssh
+
+and then firewall setup ...check the documentation
+-------------------------------------------------------------------
+
+
+
+Step 2: install node.js
+#install node.js using nvm:
+#--------------------------------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
+
+now retstart the shell (mean exit and again login)
+
+# Download and install Node.js:
+nvm install --lts  //always install the latest version of node
+# Verify the Node.js version:
+node -v 
+# Verify npm version:
+npm -v
+
+#----------------------------------------
+#----------------------------------------
+
+
+
+
+Step3: install mongodb
+#install mongodb databse:
+mongodb site link: https://www.mongodb.com/docs/manual/administration/install-community/?operating-system=linux&linux-distribution=ubuntu&linux-package=default
+
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.3 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.3.list
+sudo apt update
+sudo apt install -y mongodb-org
+
+#check the mongodb status: 
+sudo systemctl status mongodb
+#start and enabled mongodb:
+sudo systemctl start mongod
+
+
+
+Step4: install git
+#install git:
+sudo apt install git
+sudo apt update
+sudo apt install gh
+gh auth login
+
+
+----------------first time end --------------------------
+----------------------done --------------------------
+
+
+#get your project :
+git clone <git-repo>
+npm install
+npm install -g nodemon
+
+
+#git clone from a branch:
+git clone --branch <branch-name> <repository-url>
+
+git clone --branch dev-masud https://github.com/AzShayak/peerless-smart-sales.git
+
+
+
+
+#pm2:
+ npm i -g pm2
+ pm2 start npm --name "fdh-server" -- start
+ pm2 ls
+ pm2 logs test_server
+ pm2 delete learn-lab 
+ pm2 restart learn-lab 
+ pm2 save
+
+
+
+#firewall:
+sudo ufw status
+sudo ufw allow <>
+sudo ufw deny <>
+
+
+
+
+----------------------------------------------
+####mongodb database important command ####
+
+Download MongoDB Database Tools and put the "mongodump" and "mongorestore" file from "MongoDB Database Tools" to your local mongodb bin folder
+MongoDB Database Tools downlaod link: 
+    https://www.mongodb.com/try/download/database-tools#:~:text=MongoDB%20Command%20Line%20Database%20Tools%20Download
+
+#Export All Collections (Full Database Backup)
+For a local database: 
+    mongodump --db your_database_name --out /path/to/output_directory
+Export to a compressed file
+    mongodump --db your_database_name --archive=my_database.gz --gzip
+
+For a remote database or MongoDB Atlas:
+    mongodump --uri="mongodb+srv://username:password@cluster.mongodb.net/your_database_name" --out /path/to/output_directory
+
+
+#Import All Collections (Full Database Restore)
+To a local database:
+    mongorestore --db your_database_name /path/to/output_directory/your_database_name
+Import from a compressed file
+    mongorestore --db your_database_name --archive=my_database.gz --gzip
+
+To a remote database or MongoDB Atlas:
+    mongorestore --uri="mongodb+srv://username:password@cluster.mongodb.net/your_database_name" /path/to/output_directory/your_database_name
+----------------------------------------------------
+
+#mongodb usefull command:
+Drop a db: db.dropDatabase()
+Drop the collection: db.myCollection.drop()
