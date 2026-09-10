@@ -129,8 +129,7 @@ MongoDB Database Tools downlaod link:
 #Export All Collections (Full Database Backup)
 For a local database: 
     mongodump --db your_database_name --out /path/to/output_directory
-Export to a compressed file
-    mongodump --db your_database_name --archive=my_database.gz --gzip
+    mongodump --db your_database_name --archive=my_database.gz --gzip  //Export to a compressed file
 
 For a remote database or MongoDB Atlas:
     mongodump --uri="mongodb+srv://username:password@cluster.mongodb.net/your_database_name" --out /path/to/output_directory
@@ -139,8 +138,7 @@ For a remote database or MongoDB Atlas:
 #Import All Collections (Full Database Restore)
 To a local database:
     mongorestore --db your_database_name /path/to/output_directory/your_database_name
-Import from a compressed file
-    mongorestore --db your_database_name --archive=my_database.gz --gzip
+    mongorestore --db your_database_name --archive=my_database.gz --gzip //Import from a compressed file
 
 To a remote database or MongoDB Atlas:
     mongorestore --uri="mongodb+srv://username:password@cluster.mongodb.net/your_database_name" /path/to/output_directory/your_database_name
